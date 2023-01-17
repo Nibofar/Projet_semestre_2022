@@ -11,51 +11,7 @@ C:\Users\quent\OneDrive\Bureau\Jeu David\Projet_semestre_2022\projet\Entities.hp
           ]
 C:\Users\quent\OneDrive\Bureau\Jeu David\Projet_semestre_2022\projet\CmdFile.hpp(30,10): warning C4244: '=' : conversion de 'float' en 'int', perte possible de données
 C:\Users\quent\OneDrive\Bureau\Jeu David\Projet_semestre_2022\projet\CmdFile.hpp(31,10): warning C4244: '=' : conversion de 'float' en 'int', perte possible de données
-C:\Users\quent\OneDrive\Bureau\Jeu David\Projet_semestre_2022\projet\ConsoleApplication.cpp(32,12): warning C4244: 'argument' : conversion de 'time_t' en 'unsigned int', perte possible de données
-C:\Users\quent\OneDrive\Bureau\Jeu David\Projet_semestre_2022\projet\ConsoleApplication.cpp(56,29): warning C4305: 'initialisation' : troncation de 'double' à 'float'
-C:\Users\quent\OneDrive\Bureau\Jeu David\Projet_semestre_2022\projet\ConsoleApplication.cpp(59,19): warning C4244: '-=' : conversion de 'double' en 'float', perte possible de données
-  Entities.cpp
-C:\Users\quent\OneDrive\Bureau\Jeu David\Projet_semestre_2022\projet\Entities.hpp(65,82): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
-          with
-          [
-              T=float
-          ]
-C:\Users\quent\OneDrive\Bureau\Jeu David\Projet_semestre_2022\projet\Entities.hpp(65,39): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
-          with
-          [
-              T=float
-          ]
-C:\Users\quent\OneDrive\Bureau\Jeu David\Projet_semestre_2022\projet\Entities.cpp(33,12): warning C4244: 'initialisation' : conversion de 'int' en 'float', perte possible de données
-C:\Users\quent\OneDrive\Bureau\Jeu David\Projet_semestre_2022\projet\Entities.cpp(34,12): warning C4244: 'initialisation' : conversion de 'int' en 'float', perte possible de données
-C:\Users\quent\OneDrive\Bureau\Jeu David\Projet_semestre_2022\projet\Entities.cpp(35,47): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
-          with
-          [
-              T=float
-          ]
-C:\Users\quent\OneDrive\Bureau\Jeu David\Projet_semestre_2022\projet\Entities.cpp(35,37): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
-          with
-          [
-              T=float
-          ]
-C:\Users\quent\OneDrive\Bureau\Jeu David\Projet_semestre_2022\projet\Entities.cpp(54,63): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
-          with
-          [
-              T=float
-          ]
-C:\Users\quent\OneDrive\Bureau\Jeu David\Projet_semestre_2022\projet\Entities.cpp(54,38): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
-          with
-          [
-              T=float
-          ]
-C:\Users\quent\OneDrive\Bureau\Jeu David\Projet_semestre_2022\projet\Entities.cpp(83,61): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
-          with
-          [
-              T=float
-          ]
-C:\Users\quent\OneDrive\Bureau\Jeu David\Projet_semestre_2022\projet\Entities.cpp(83,37): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
-          with
-          [
-              T=float
-          ]
-  Génération de code en cours...
+C:\Users\quent\OneDrive\Bureau\Jeu David\Projet_semestre_2022\projet\ConsoleApplication.cpp(39,12): warning C4244: 'argument' : conversion de 'time_t' en 'unsigned int', perte possible de données
+C:\Users\quent\OneDrive\Bureau\Jeu David\Projet_semestre_2022\projet\ConsoleApplication.cpp(82,30): warning C4305: 'initialisation' : troncation de 'double' à 'float'
+C:\Users\quent\OneDrive\Bureau\Jeu David\Projet_semestre_2022\projet\ConsoleApplication.cpp(85,19): warning C4244: '-=' : conversion de 'double' en 'float', perte possible de données
   ConsoleApplication1.vcxproj -> C:\Users\quent\OneDrive\Bureau\Jeu David\Projet_semestre_2022\projet\x64\Debug\ConsoleApplication1.exe

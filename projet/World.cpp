@@ -27,33 +27,6 @@ bool World::collides(float gx, float gy) {
 	return false;
 }
 
-void World::mkGraphics() {
-	sf::Color col = sf::Color::Green;
-	staticGfx.clear();
-	for (auto iter = statics.begin(); iter != statics.end(); ) {
-		sf::Vector2i vtx = *iter;
-		staticGfx.append(sf::Vertex(sf::Vector2f(vtx.x * Game::CELL_SIZE, vtx.y * Game::CELL_SIZE), col));
-		staticGfx.append(sf::Vertex(sf::Vector2f((vtx.x+1) * Game::CELL_SIZE, vtx.y * Game::CELL_SIZE), col));
-		staticGfx.append(sf::Vertex(sf::Vector2f((vtx.x+1) * Game::CELL_SIZE, (vtx.y+1) * Game::CELL_SIZE), col));
-		staticGfx.append(sf::Vertex(sf::Vector2f(vtx.x * Game::CELL_SIZE, (vtx.y+1) * Game::CELL_SIZE), col));
-		iter++;
-	}
-}
-
-void World::poke(int gx, int gy) {
-	for (auto iter = statics.begin(); iter != statics.end(); ) {
-		auto& st = *iter;
-		if (st.x == gx && st.y == gy) {
-			iter = statics.erase(iter);
-			mkGraphics();
-			return;
-		}
-		else iter++;
-	}
-	statics.push_back(sf::Vector2i(gx, gy));
-	mkGraphics();
-}
-
 void World::draw(sf::RenderWindow& win) {
 	win.draw(staticGfx);
 }

@@ -9,9 +9,6 @@ public:
 	sf::VertexArray				staticGfx;
 	bool collides(float gx, float gy);
 
-	void mkGraphics();
-	void poke(int gx, int gy);
-
 	void draw(sf::RenderWindow& win);
 	
 	std::vector<Cell*> cells;
