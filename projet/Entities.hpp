@@ -1,35 +1,16 @@
 #pragma once
-
 #include "SFML/Graphics/Shape.hpp"
 #include "SFML/Graphics/Rect.hpp"
 #include "SFML/Graphics/RenderWindow.hpp"
+#include "Game.hpp"
 
-#include "Cst.hpp"
-
-class State;
-
-class Entity{
+class Entity {
 public:
-	sf::Shape*		shp = nullptr;
+	sf::Shape* shp = nullptr;
+	sf::Vector2i gridPos = sf::Vector2i(0, 0);
+	sf::Vector2i direction = sf::Vector2i(0, 0);
 
-	float			rx = 0.5f;//
-	float			ry = 1.0f;
-
-	float			dx = 0.0f;
-	float			dy = 0.0f;
-
-	float			frictX = 0.9f;
-	float			frictY = 0.9f;
-
-	int				cx = 0;
-	int				cy = 0;
-
-	float			stateLife = 0.0f;
-
-	State*			currentState = nullptr;
-	State*			idleState = nullptr;
-	State*			walkState = nullptr;
-
+	Entity() {}
 	Entity(sf::Vector2f pixelPos, sf::Shape* shp);
 
 	void setPixelPos(sf::Vector2f npos);
@@ -40,26 +21,47 @@ public:
 	inline auto getLocalBounds() const {
 		return shp->getLocalBounds();
 	};
-	
 	inline auto getGlobalBounds() const {
 		return shp->getGlobalBounds();
 	};
 	inline auto getPosition() const {
 		return shp->getPosition();
 	};
-	
 	inline void setPosition(const sf::Vector2f& v) {
 		shp->setPosition(v);
 	};
-	
 	void syncGridToPixel();
-	void onEvent(sf::Event& e);
-	void update();
 	void draw(sf::RenderWindow& win);
-	bool collides(float gx,float gy);
+	bool collides(float gx, float gy);
+};
 
-	void jumpControl(sf::Event& e);
-	void walkControl();
+class Body : public Entity {
+public:
+	sf::Vector2i lastPos;
+	Body* nextBody = nullptr;
+	Body() {
+		shp = new sf::RectangleShape(sf::Vector2f(Game::CELL_SIZE, Game::CELL_SIZE));
+		shp->setFillColor(sf::Color::Green);
 
-	void changeState(State * st);
+	}
+	void Move(sf::Vector2i pos);
+	void update();
+};
+
+class Apple : public Entity {
+public:
+	Apple() {
+		shp = new sf::CircleShape(Game::CELL_SIZE / 2);
+		shp->setFillColor(sf::Color::Red);
+	}
+	sf::Vector2i Pop(Body* snake);
+};
+
+class Cell : public Entity {
+public:
+	Cell(sf::Vector2i pos, sf::Shape* shape, const sf::Color color) {
+		shp = shape;
+		shp->setFillColor(color);
+		shp->setPosition(sf::Vector2f(pos.x * Game::CELL_SIZE, pos.y * Game::CELL_SIZE + Game::CELL_SIZE * 2));
+	}
 };

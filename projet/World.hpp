@@ -1,5 +1,4 @@
-#pragma once
-
+ #pragma once
 #include "Entities.hpp"
 
 class World{
@@ -14,6 +13,8 @@ public:
 	void poke(int gx, int gy);
 
 	void draw(sf::RenderWindow& win);
+	
+	std::vector<Cell*> cells;
 };
 
 extern World world;

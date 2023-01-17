@@ -8,9 +8,9 @@ World::World(){
 }
 
 bool World::collides(float gx, float gy) {
-	if( gx > Game::WIDTH / Cst::CELL_SIZE)
+	if( gx > Game::WIDTH / Game::CELL_SIZE)
 		return true;
-	if (gy > ((Game::HEIGHT / Cst::CELL_SIZE)-2))
+	if (gy > ((Game::HEIGHT / Game::CELL_SIZE)-2))
 		return true;
 	else if (gx < 0) 
 		return true;
@@ -32,10 +32,10 @@ void World::mkGraphics() {
 	staticGfx.clear();
 	for (auto iter = statics.begin(); iter != statics.end(); ) {
 		sf::Vector2i vtx = *iter;
-		staticGfx.append(sf::Vertex(sf::Vector2f(vtx.x * Cst::CELL_SIZE, vtx.y * Cst::CELL_SIZE), col));
-		staticGfx.append(sf::Vertex(sf::Vector2f((vtx.x+1) * Cst::CELL_SIZE, vtx.y * Cst::CELL_SIZE), col));
-		staticGfx.append(sf::Vertex(sf::Vector2f((vtx.x+1) * Cst::CELL_SIZE, (vtx.y+1) * Cst::CELL_SIZE), col));
-		staticGfx.append(sf::Vertex(sf::Vector2f(vtx.x * Cst::CELL_SIZE, (vtx.y+1) * Cst::CELL_SIZE), col));
+		staticGfx.append(sf::Vertex(sf::Vector2f(vtx.x * Game::CELL_SIZE, vtx.y * Game::CELL_SIZE), col));
+		staticGfx.append(sf::Vertex(sf::Vector2f((vtx.x+1) * Game::CELL_SIZE, vtx.y * Game::CELL_SIZE), col));
+		staticGfx.append(sf::Vertex(sf::Vector2f((vtx.x+1) * Game::CELL_SIZE, (vtx.y+1) * Game::CELL_SIZE), col));
+		staticGfx.append(sf::Vertex(sf::Vector2f(vtx.x * Game::CELL_SIZE, (vtx.y+1) * Game::CELL_SIZE), col));
 		iter++;
 	}
 }
@@ -48,8 +48,7 @@ void World::poke(int gx, int gy) {
 			mkGraphics();
 			return;
 		}
-		else
-			iter++;
+		else iter++;
 	}
 	statics.push_back(sf::Vector2i(gx, gy));
 	mkGraphics();
